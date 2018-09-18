@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-void main() => runApp(new MyWidget(
-  title: "TITLE",
-  message: "MESSAGE"
-));
+void main() {
+  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+    // Test code will go here!
+  });
+}
 
 class MyWidget extends StatelessWidget {
   final String title;
