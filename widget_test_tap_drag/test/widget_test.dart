@@ -15,5 +15,11 @@ void main() {
     await tester.pumpWidget(new TodoList());
 
     await tester.enterText(find.byType(TextField), 'hi');
+
+    await tester.tap(find.byType(FloatingActionButton));
+
+    await tester.pump();
+
+    expect(find.text('hi'), findsOneWidget);
   });
 }
