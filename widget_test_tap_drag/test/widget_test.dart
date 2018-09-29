@@ -21,5 +21,11 @@ void main() {
     await tester.pump();
 
     expect(find.text('hi'), findsOneWidget);
+
+    await tester.drag(find.byType(Dismissible), Offset(500.0, 0.0));
+
+    await tester.pumpAndSettle();
+
+    expect(find.text('h1'), findsNothing);
   });
 }
