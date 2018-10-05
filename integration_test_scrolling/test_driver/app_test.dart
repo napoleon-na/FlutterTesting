@@ -19,16 +19,18 @@ void main() {
       final listFinder = find.byValueKey('long_list');
       final itemFinder = find.byValueKey('item_50_text');
 
-      await driver.scrollUntilVisible(
-        listFinder,
-        itemFinder,
-        dyScroll: -300.0
-      );
+      final timeline = await driver.traceAction(() async {
+        await driver.scrollUntilVisible(
+          listFinder,
+          itemFinder,
+          dyScroll: -300.0
+        );
 
-      expect(
-        await driver.getText(itemFinder),
-        'Item 50'
-      );
+        expect(
+          await driver.getText(itemFinder),
+          'Item 50'
+        );
+      });
     });
   });
 }
