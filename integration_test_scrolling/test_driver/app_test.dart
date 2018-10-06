@@ -31,6 +31,12 @@ void main() {
           'Item 50'
         );
       });
+
+      final summary = new TimelineSummary.summarize(timeline);
+
+      summary.writeSummaryToFile('scrolling_summary', pretty: true);
+
+      summary.writeTimelineToFile('scrolling_timeline', pretty: true);
     });
   });
 }
